@@ -1,0 +1,21 @@
+@mixin container{
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@mixin section{
+    padding: $section-padding;
+}
+
+@mixin title{
+    font-size: $h1-size;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+@mixin subtitle{
+    font-size: $text-large;
+    line-height: 1.6;
+    color: $color-text-secondary;
+}

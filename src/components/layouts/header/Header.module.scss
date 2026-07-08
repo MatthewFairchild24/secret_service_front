@@ -1,0 +1,537 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+$fs-brand-title: clamp(18px, 0.35vw + 16px, 22px);
+$fs-nav: clamp(16px, 0.25vw + 14px, 18px);
+$fs-phone: clamp(16px, 0.25vw + 14px, 18px);
+
+/* ВАЖНО: это цвет логотипа/надписей бренда — НЕ МЕНЯЕМ */
+$brand-color: #575757;
+
+/* Desktop высота логоблока */
+$brandBlockH: 84px;
+
+.header {
+  background: $color-bg;
+  border-bottom: 1px solid $color-border;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.headerContainer {
+  max-width: 100% !important;
+  padding-inline: 16px !important;
+}
+
+/* ===== Desktop layout ===== */
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 84px;
+  column-gap: 28px;
+}
+
+/* ===== Бренд ===== */
+.brand {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  /* брендовый цвет — оставляем */
+  color: $brand-color;
+}
+
+.logoWrap {
+  width: $brandBlockH;
+  height: $brandBlockH;
+
+  display: inline-grid;
+  place-items: center;
+
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.logoSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  /* брендовый цвет — оставляем */
+  color: $brand-color;
+
+  transform: scale(1.12);
+  transform-origin: center;
+}
+
+/* Wordmark справа */
+.wordmark {
+  min-height: $brandBlockH;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+  text-align: center;
+
+  gap: 3px;
+  line-height: 1;
+}
+
+.wordmarkTitle {
+  font-weight: 800;
+  font-size: $fs-brand-title;
+  letter-spacing: -0.02em;
+
+  /* брендовый цвет — оставляем */
+  color: $brand-color;
+
+  line-height: 1;
+}
+
+/* Две версии заголовка */
+.titleDesktop {
+  display: inline;
+}
+
+.titleMobile {
+  display: none;
+}
+
+.wordmarkTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 10px;
+  border-radius: 9px;
+
+  /* бейдж в брендовый цвет — оставляем */
+  background: $brand-color;
+  color: $color-bg;
+
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1;
+
+  transform: translateY(-1px);
+}
+
+/* ===== Навигация ===== */
+.nav {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  min-width: 0;
+}
+
+.link {
+  font-size: $fs-nav;
+  color: $color-text;
+  text-decoration: none;
+
+  opacity: 1;
+  color: rgba($color-text, 0.72);
+
+  transition: $transition-fast;
+  white-space: nowrap;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.linkActive {
+  @extend .link;
+  color: $color-text;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+    height: 1px;
+    background: rgba($color-text, 0.35);
+  }
+}
+
+/* ===== Справа: телефон + бургер ===== */
+.right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.phone,
+.phonePlaceholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 22px;
+  border-radius: 999px;
+
+  font-size: $fs-phone;
+  white-space: nowrap;
+}
+
+.phone {
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  outline: none;
+
+  background: $color-bg;
+  color: $color-text;
+
+  border: 1px solid $color-text;
+  box-shadow: $shadow-sm;
+
+  font-weight: 650;
+  transition: $transition-normal;
+
+  text-decoration: none;
+
+  &:hover {
+    background: $gray-600;
+    border-color: $gray-600;
+    color: $color-bg;
+
+    box-shadow: $shadow-md;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: $shadow-sm;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba($color-text, 0.18);
+    outline-offset: 2px;
+  }
+}
+
+.phonePlaceholder {
+  border: 1px solid $color-border;
+  background: $color-surface;
+  color: rgba($color-text, 0.72);
+}
+
+/* ===== Бургер (по умолчанию скрыт) ===== */
+.burger {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+
+  border: 1px solid $color-border;
+  background: $color-bg;
+
+  color: $brand-color;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: background $transition-fast, border-color $transition-fast, transform $transition-fast;
+
+  &:hover {
+    background: $color-surface;
+    border-color: $color-text-secondary;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.burger[aria-expanded="true"] {
+  background: $color-surface;
+  border-color: $color-text-secondary;
+}
+
+/* НОВЫЙ БУРГЕР: 3 линии + превращение в X */
+.burgerIcon {
+  width: 18px;
+  height: 14px;
+  position: relative;
+  display: block;
+
+  background: linear-gradient($brand-color 0 0) center/100% 2px no-repeat;
+  transition: background-size 0.18s ease;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: $brand-color;
+    border-radius: 2px;
+    transition: transform 0.18s ease, top 0.18s ease, bottom 0.18s ease;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}
+
+.burger[aria-expanded="true"] .burgerIcon {
+  background-size: 0% 2px;
+}
+
+.burger[aria-expanded="true"] .burgerIcon::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.burger[aria-expanded="true"] .burgerIcon::after {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* ===== Mobile menu overlay ===== */
+.mobile {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0;
+  transition: $transition-normal;
+}
+
+.mobileOpen {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.mobileBackdrop {
+  position: absolute;
+  inset: 0;
+  background: $color-backdrop;
+}
+
+.mobilePanel {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+
+  top: 84px;
+
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+
+  max-height: calc(100vh - 108px);
+  overflow: auto;
+
+  transform: translateY(-8px);
+  transition: 0.22s ease;
+
+  .mobileOpen & {
+    transform: translateY(0);
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 84px;
+}
+
+.mobileLink {
+  display: block;
+  padding: 16px 18px;
+
+  font-size: 16px;
+  color: $color-text;
+  text-decoration: none;
+
+  border-top: 1px solid $color-border;
+
+  &:first-child {
+    border-top: none;
+  }
+
+  &:hover {
+    background: $color-surface;
+  }
+}
+
+.mobileLinkActive {
+  background: $color-surface;
+  font-weight: 700;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    background: $gray-600;
+    border-radius: 2px;
+  }
+}
+
+.mobilePhone {
+  display: block;
+  margin: 12px;
+  padding: 14px 18px;
+
+  border-radius: 999px;
+  border: 1px solid $color-text;
+
+  background: $gray-600;
+  color: $color-bg;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+
+  position: sticky;
+  bottom: 12px;
+  z-index: 1;
+}
+
+/* ===================================================================== */
+/* <= 1120px — включаем burger-режим + делаем панель “планшетной” */
+/* ===================================================================== */
+@media (max-width: 1120px) {
+  .nav {
+    display: none;
+  }
+
+  .phone,
+  .phonePlaceholder {
+    display: none;
+  }
+
+  .burger {
+    display: inline-flex;
+    margin: 0;
+  }
+
+  .row {
+    grid-template-columns: auto 1fr auto;
+    column-gap: 12px;
+  }
+
+  .headerContainer {
+    padding-inline: 12px !important;
+  }
+
+  .mobilePanel {
+    left: 50%;
+    right: auto;
+    width: min(760px, calc(100% - 24px));
+
+    transform: translate(-50%, -8px);
+
+    .mobileOpen & {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .mobilePhone {
+    width: min(680px, calc(100% - 24px));
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ===================================================================== */
+/* <= 900px — “мобилка”: компактная высота + режим “Ю = знак” + -ДЕНТ */
+/* ===================================================================== */
+@media (max-width: 900px) {
+  .burger {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+
+  .row {
+    height: 62px;
+    column-gap: 10px;
+  }
+
+  .mobilePanel {
+    top: 62px;
+    max-height: calc(100vh - 86px);
+  }
+
+  .brand {
+    gap: 6px;
+  }
+
+  .logoWrap {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logoSvg {
+    transform: scale(1.14);
+  }
+
+  .wordmark {
+    min-height: 36px;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0;
+  }
+
+  .wordmarkTag {
+    display: none;
+  }
+
+  .titleDesktop {
+    display: none;
+  }
+
+  .titleMobile {
+    display: inline;
+    margin-left: -3px;
+  }
+
+  .wordmarkTitle {
+    font-size: 26px;
+    letter-spacing: -0.02em;
+
+    height: 32px;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+
+    position: relative;
+    top: 1px;
+  }
+}

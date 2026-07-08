@@ -1,0 +1,18 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.container{
+    @include container;
+
+    line-height: 1.4;
+    min-width: 280px;
+
+}
+
+.narrow{
+    max-width: 840px;
+}
+
+.fluid{
+    max-width: 100%;
+}
