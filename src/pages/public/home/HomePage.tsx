@@ -1,11 +1,30 @@
 import Header from '../../../components/layouts/header/Header'
+import Container from '../../../components/layouts/container/Container'
 
-// import s from './HomePage.module.scss'
+import s from './HomePage.module.scss'
 
 export default function HomePage(){
     return(<>
-        <Header></Header>
-        <h1>HomePage</h1>
+        <div className={s.page}>
+            <Header/>
+            <main className={s.main}>
+                <section className={s.hero}>
+                    <Container>
+                        <div className={s.heroContent}>
+                            <h1 className={s.title}>Надежные металлические конструкции для вашего участка</h1>
+                            <p className={s.subTitle}>Современные решения для благоустройства территории и архитектурного оформления</p>
+
+                            <div className={s.actions}>
+                                {/* Что-нибудь добавлю */}
+                            </div>
+                        </div>
+                    </Container>
+
+                </section>
+            </main>
+        </div>
+       
+        
 
     </>)
 }
