@@ -1,4 +1,5 @@
 import Header from '../../../components/layouts/header/Header'
+import AboutUs from '../../../components/sections/aboutUs/AboutUs'
 import Container from '../../../components/layouts/container/Container'
 
 import s from './HomePage.module.scss'
@@ -20,6 +21,10 @@ export default function HomePage(){
                         </div>
                     </Container>
 
+                </section>
+
+                <section className={`section section--tight ${s.sectionCompact}`}>
+                    <AboutUs />
                 </section>
             </main>
         </div>

@@ -14,9 +14,11 @@ $brandBlockH: 84px;
 .header {
   background: $color-bg;
   border-bottom: 1px solid $color-border;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 50;
+  left: 0;
+  z-index: 100;
+  width: 100%;
 
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(10px);
@@ -213,7 +215,7 @@ $brandBlockH: 84px;
   text-decoration: none;
 
   &:hover {
-    background: $gray-600;
+    background: $gray-400;
     border-color: $contrast;
     color: $contrast;
 

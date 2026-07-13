@@ -33,7 +33,7 @@ export default function Header(){
 
 
     return(<>
-        <header>
+        <header className={s.header}>
             <Container className={s.containerHeader}>
                 <div className={s.row}>
                     <NavLink to="/"
