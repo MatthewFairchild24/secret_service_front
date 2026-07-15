@@ -10,21 +10,32 @@
 }
 
 .contentText{
-    max-width: 500px;
+    max-width: 550px;
     align-items: center;
 
     .title{
         padding-bottom: 15px;
         font-weight: 700;
+
+        .titleWhite{
+            color:$color-text;
+        }
+
+        .titleAccent{
+            color:$accent
+        }
     }
 
     .text{
-        color: $color-text-secondary;
+        color:  $color-text-thirty;
+        font-weight: 600;
+        // color: $color-text-secondary;
     }
 }
 
 .stackPhoto{
-    position:relative;
+    display: grid;
+    
 
     .photoA{
         background-image: url("../../../assets/brand/aboutUs.png");
@@ -32,9 +43,59 @@
         height: 360px;
         background-size: cover;
         background-position: center;
+        border-radius: 3px;
+        border: 1px solid $color-border;
+
+
+        grid-area: 1 / 1;
+        
     }
 
-    .photoB{
+    .photoButton{
+        grid-area: 1 / 1;
+        justify-self: end;
+        align-self: end;
 
+        transform: translate(-80px, 25px);
+
+        color: $color-text-secondary;
+        background-color: $gray-600;
+        border: 1px solid $color-border;
+        border-radius: 5px;
+
+        width: 148px;
+        height: 44px;
+        
+        box-shadow: $shadow-sm;
+        font-weight: 650;
+
+        appearance: none;
+        cursor: pointer;
+        outline: none;
+
+        transition: $transition-normal;
+
+        &:hover{
+            background-color: $gray-400 ;
+            border-color: $contrast;
+            color: $contrast;
+
+            box-shadow: $shadow-md;
+            transform: translate(-81px, 25px);
+        }
+
+        &:active{
+            transform: translate(-80px, 27px)
+        }
+
+        &:focus{
+            outline:none;
+            box-shadow: $shadow-sm;
+        }
+
+        &:focus-visible{
+            outline: 2px solid $color-border;
+            outline-offset: 2px;
+        }
     }
 }

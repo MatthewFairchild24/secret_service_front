@@ -1,4 +1,4 @@
-import { DEFAULT_TEXT, DEFAULT_TITLE } from '../../../app/content/aboutUs'
+import { ABOUT_TEXT, ABOUT_TITLE_ACCENT, ABOUT_TITLE_WHITE} from '../../../app/content/aboutUs'
 import Container from '../../layouts/container/Container'
 
 import s from './AboutUs.module.scss'
@@ -10,8 +10,11 @@ export default function AboutUs(){
             <Container>
                 <div className={s.containerAboutUs}>
                     <div className={s.contentText}>
-                        <h1 className={s.title}>{DEFAULT_TITLE}</h1>
-                        <p className={s.text}>{DEFAULT_TEXT.split("\n").map((line, i) => (
+                        <h1 className={s.title}>
+                            <span className={s.titleWhite}>{ABOUT_TITLE_WHITE}</span>
+                            <span className={s.titleAccent}>{ABOUT_TITLE_ACCENT}</span>
+                        </h1>
+                        <p className={s.text}>{ABOUT_TEXT.split("\n").map((line, i) => (
                             <span key={i}>
                                 {line}
                                 <br/>
@@ -20,7 +23,7 @@ export default function AboutUs(){
                     </div>
                     <div className={s.stackPhoto}>
                         <div className={s.photoA}></div>
-                        <div className={s.photoB}></div>
+                        <button className={s.photoButton}>Портфолио</button>
                     </div>
                 </div>
             </Container>

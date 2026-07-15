@@ -1,0 +1,58 @@
+.containerProject{
+
+}
+
+.carousel{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.track{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    // далее скрываем scroll-bar
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+}
+
+.slide{
+    flex: 0 0 100%; 
+    scroll-snap-align: start;
+
+    img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+.prev,
+.next{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    background:rgba(255, 255, 255, 0.2) ;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 32px;
+    color: white;
+    backdrop-filter: blur(4px);
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right: 20px;
+}

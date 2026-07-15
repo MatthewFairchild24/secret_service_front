@@ -3,6 +3,7 @@ import AboutUs from '../../../components/sections/aboutUs/AboutUs'
 import Container from '../../../components/layouts/container/Container'
 
 import s from './HomePage.module.scss'
+import Project from '../../../components/sections/projects/Project'
 
 export default function HomePage(){
     return(<>
@@ -25,6 +26,10 @@ export default function HomePage(){
 
                 <section className={`section section--loose ${s.sectionCompact}`}>
                     <AboutUs />
+                </section>
+
+                <section className={`section section--tigth ${s.sectionCompact}`}>
+                    <Project />
                 </section>
             </main>
         </div>
