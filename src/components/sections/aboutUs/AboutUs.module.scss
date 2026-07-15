@@ -1,0 +1,40 @@
+@import '../../../styles/variables';
+
+
+.containerAboutUs{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    gap: 40px;  
+    justify-items: center;
+    
+}
+
+.contentText{
+    max-width: 500px;
+    align-items: center;
+
+    .title{
+        padding-bottom: 15px;
+        font-weight: 700;
+    }
+
+    .text{
+        color: $color-text-secondary;
+    }
+}
+
+.stackPhoto{
+    position:relative;
+
+    .photoA{
+        background-image: url("../../../assets/brand/aboutUs.png");
+        width: 470px;
+        height: 360px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photoB{
+
+    }
+}

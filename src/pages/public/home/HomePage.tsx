@@ -23,7 +23,7 @@ export default function HomePage(){
 
                 </section>
 
-                <section className={`section section--tight ${s.sectionCompact}`}>
+                <section className={`section section--loose ${s.sectionCompact}`}>
                     <AboutUs />
                 </section>
             </main>

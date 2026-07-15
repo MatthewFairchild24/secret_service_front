@@ -27,6 +27,14 @@ body{
     color: $color-text;
 }
 
+@font-face {
+    font-family: 'chicagoflf_0';
+    src: url("../assets/font/chicagoflf_0.ttf") format('ttf');
+    font-weight: 400;
+    font-style:normal;
+    font-display: swap;
+}
+
 h1,
 h2,
 h3,
