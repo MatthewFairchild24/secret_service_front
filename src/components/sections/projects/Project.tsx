@@ -9,6 +9,7 @@ import { useRef } from "react"
 
 export default function Project(){
 
+
     const trackRef = useRef<HTMLDivElement>(null)
 
     const images = [img, img1, img2, img3]
@@ -32,13 +33,19 @@ export default function Project(){
                         <div className={s.track} ref={trackRef}>
                             {images.map((src, i) => (
                                 <div className={s.slide} key={i}>
-                                    <img src={src} alt="image" />
+                                    <div className={s.imageWrapper}>
+                                        <img src={src} alt="image" />
+                                        <div className={s.overlay}></div>
+                                    </div>
+                                    
+                                    <h2 className={s.title}>John Doe</h2>
+                                    <h1 className={s.subTitle}>subTest</h1>
                                 </div>
                             ))}
                         </div>
 
-                        <button className={s.prev} onClick={handlePrev}>назад</button>
-                        <button className={s.next} onClick={handleNext}>вперед</button>
+                        <button className={s.prev} onClick={handlePrev}>&#10094;</button>
+                        <button className={s.next} onClick={handleNext}>&#10095;</button>
                     </div>
                 </div>
             </Container>

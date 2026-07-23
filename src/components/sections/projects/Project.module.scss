@@ -1,5 +1,7 @@
-.containerProject{
+@import '../../../styles/variables';
 
+.containerProject{
+//    max-width: 1200px;
 }
 
 .carousel{
@@ -10,10 +12,10 @@
 
 .track{
     display: flex;
+
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-
     // далее скрываем scroll-bar
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -25,34 +27,75 @@
 }
 
 .slide{
-    flex: 0 0 100%; 
+    flex: 0 0 50%; 
     scroll-snap-align: start;
+    position: relative;
+
+    
+}
+
+.imageWrapper{
+    position: relative;
+    margin: auto;
+    width: 70%;
+        
+    }
 
     img{
         width: 100%;
         height: auto;
         display: block;
+        margin: auto;
+
+        
+        }
+        .overlay{
+            position: absolute;
+            z-index: 1;
+
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.32);
+
+        }
+
+    
+
+    .subTitle,
+    .title{
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        z-index:2;
     }
-}
+
+    .title{
+        color:$accent;
+
+    }
+    .subTitle{
+        bottom: 30px;
+    }
 
 .prev,
 .next{
     position: absolute;
     top:50%;
     transform: translateY(-50%);
-    background:rgba(255, 255, 255, 0.2) ;
+    background: transparent;
     border: none;
     padding: 12px;
     cursor: pointer;
     font-size: 32px;
     color: white;
-    backdrop-filter: blur(4px);
+    // backdrop-filter: blur(4px);
 }
 
 .prev{
-    left:20px;
+    left:50px;
 }
 
 .next{
-    right: 20px;
+    right: 50px ;
 }
