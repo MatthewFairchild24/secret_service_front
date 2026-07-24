@@ -4,6 +4,20 @@
 //    max-width: 1200px;
 }
 
+.title{
+
+        padding-bottom: 32px;
+        font-weight: 700;
+
+        .titleWhite{
+            color:$color-text;
+        }
+
+        .titleAccent{
+            color:$accent
+        }
+    }
+
 .carousel{
     position: relative;
     width: 100%;
@@ -37,7 +51,7 @@
 .imageWrapper{
     position: relative;
     margin: auto;
-    width: 70%;
+    width: 96%;
         
     }
 
@@ -60,8 +74,8 @@
 
     
 
-    .subTitle,
-    .title{
+    .subTitleCard,
+    .titleCard{
         position: absolute;
         bottom: 60px;
         left: 50%;
@@ -70,11 +84,11 @@
         z-index:2;
     }
 
-    .title{
+    .titleCard{
         color:$accent;
 
     }
-    .subTitle{
+    .subTitleCard{
         bottom: 30px;
     }
 

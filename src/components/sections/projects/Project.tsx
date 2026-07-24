@@ -6,6 +6,7 @@ import img1 from '../../../assets/project/image1.jpg'
 import img2 from '../../../assets/project/image2.jpg'
 import img3 from '../../../assets/project/image3.jpg'
 import { useRef } from "react"
+import ContainerContent from "../../layouts/containerContent/ContainerContent"
 
 export default function Project(){
 
@@ -28,7 +29,12 @@ export default function Project(){
     <>
         <div className={s.section}>
             <Container>
-                <div className={s.containerProject}>
+                <ContainerContent>
+                    <div className={s.containerProject}>
+                    <h1 className={s.title}>
+                        <span className={s.titleWhite}>Наши </span>
+                        <span className={s.titleAccent}>проекты</span>
+                    </h1>
                     <div className={s.carousel}>
                         <div className={s.track} ref={trackRef}>
                             {images.map((src, i) => (
@@ -38,8 +44,8 @@ export default function Project(){
                                         <div className={s.overlay}></div>
                                     </div>
                                     
-                                    <h2 className={s.title}>John Doe</h2>
-                                    <h1 className={s.subTitle}>subTest</h1>
+                                    <h2 className={s.titleCard}>John Doe</h2>
+                                    <h1 className={s.subTitleCard}>subTest</h1>
                                 </div>
                             ))}
                         </div>
@@ -48,6 +54,8 @@ export default function Project(){
                         <button className={s.next} onClick={handleNext}>&#10095;</button>
                     </div>
                 </div>
+                </ContainerContent>
+                
             </Container>
         </div>
     </>
