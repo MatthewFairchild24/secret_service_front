@@ -53,7 +53,7 @@ export default function Project(){
                         <button className={s.prev} onClick={handlePrev}>&#10094;</button>
                         <button className={s.next} onClick={handleNext}>&#10095;</button>
                     </div>
-                </div>
+                </div>      
                 </ContainerContent>
                 
             </Container>

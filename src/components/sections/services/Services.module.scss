@@ -1,0 +1,12 @@
+@import '../../../styles/variables';
+
+.containerService{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    & svg{
+        color: $contrast;
+    }
+}
+

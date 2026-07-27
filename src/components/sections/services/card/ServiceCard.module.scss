@@ -1,7 +1,93 @@
 @import '../../../../styles/variables';
 
+$brand-color: #575757;
+
 .containerCard{
     max-width: 320px;
     width: 100%;
-    background-color: $color-surface;
+    background-color: $black;
+    border: 2px solid $gray-600;
+    border-radius: $radius-sm;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: $transition-normal;
+    
+    &:hover{
+        transform: translateY(-6px);
+    }
 }
+
+
+
+
+.titleCard{
+    padding: 8px 0 14px 0;
+}
+
+.descriptionCard{
+    color: $color-text-thirty;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    hyphens: auto;
+}  
+
+.buttonCard{
+    margin-top: auto;
+    margin-left: auto;
+    justify-self: end;
+
+    appearance: none;
+
+    padding: 9px 12px;
+
+    border-radius: $radius-md;
+  -webkit-appearance: none;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  outline: none;
+
+  background: $color-bg;
+  color: $color-text;
+
+  border: 2px solid $color-text;
+  box-shadow: $shadow-sm;
+
+  font-weight: 650;
+  transition: $transition-normal;
+
+  text-decoration: none;
+
+  &:hover {
+    background: $gray-400;
+    border-color: $contrast;
+    color: $contrast;
+
+    box-shadow: $shadow-md;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: $shadow-sm;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba($color-text, 0.18);
+    outline-offset: 2px;
+  }
+}
+
+
+

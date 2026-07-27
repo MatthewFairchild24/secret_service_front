@@ -8,14 +8,14 @@ import s from './Services.module.scss'
 
 const cards: ServiceCardProps [] = [
     {
-        icon: <FenceIcon/>,
+        icon: <FenceIcon />,
         title: 'Fence',
         description: 'Fence description'
-    },
+    },      
     {
         icon: <Paintbrush/>,
         title: 'Paintbrush',
-        description: 'Paintbrush description'
+        description: 'Paintbrush description а теперь давай представим, что это одно полноценное предложение которое вытянули из описания и оно тут висит и не знает что делать с концом'
     },
     {
         icon: <HummerIcon/>,
