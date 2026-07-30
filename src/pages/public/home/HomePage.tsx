@@ -5,6 +5,7 @@ import Container from '../../../components/layouts/container/Container'
 import s from './HomePage.module.scss'
 import Project from '../../../components/sections/projects/Project'
 import Services from '../../../components/sections/services/Services'
+import Footer from '../../../components/layouts/footer/Footer'
 
 export default function HomePage(){
     return(<>
@@ -33,10 +34,11 @@ export default function HomePage(){
                     <Project />
                 </section>
 
-                <section className={`secction section--tight {s.sectionCompact}`}>
+                <section className={`section section--tight {s.sectionCompact}`}>
                     <Services></Services>
                 </section>
             </main>
+            <Footer />
         </div>
        
         
