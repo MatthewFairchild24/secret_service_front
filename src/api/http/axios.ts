@@ -1,0 +1,14 @@
+import axios from "axios";
+import {API_URL} from "../../config/env"
+export const api = axios.create({
+    baseURL: API_URL,
+    withCredentials: false
+})
+
+axios.interceptors.response.use(
+    (res) => res,
+    (err) =>{
+        console.error("API error ", err.response?.data || err.message )
+        return Promise.reject(err)
+    }
+)
