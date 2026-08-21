@@ -11,8 +11,9 @@ $brand-color: #575757;
 
     padding: 20px;
 
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap:12px;
 
     transition: $transition-normal;
     
@@ -22,10 +23,18 @@ $brand-color: #575757;
 }
 
 
-
+.iconCard{
+  max-width: 50px;
+  margin: auto;
+}
 
 .titleCard{
-    padding: 8px 0 14px 0;
+  padding-top: 8px;
+  min-height: 74px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webfkit-box-orient: vertical;
+
 }
 
 .descriptionCard{
