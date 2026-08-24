@@ -10,3 +10,16 @@
     }
 }
 
+.title{
+
+    padding-bottom: 32px;
+    font-weight: 700;
+
+    .titleWhite{
+        color:$color-text;
+    }
+
+    .titleAccent{
+        color:$accent
+    }
+}

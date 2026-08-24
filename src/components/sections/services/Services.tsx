@@ -42,7 +42,10 @@ export default function Services(){
     return(<>
         <Container>
             <ContainerContent>
-                <h1>Наши услуги</h1>
+                <h1 className={s.title}>
+                        <span className={s.titleWhite}>Наши </span>
+                        <span className={s.titleAccent}>услуги</span>
+                    </h1>
 
                 <div className={s.containerService}>
                     {services.map((card, i) => (

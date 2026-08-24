@@ -1,19 +1,21 @@
 import Container from "../../layouts/container/Container"
 
 import s from './Project.module.scss'
-import img from '../../../assets/project/image.jpg'
-import img1 from '../../../assets/project/image1.jpg'
-import img2 from '../../../assets/project/image2.jpg'
-import img3 from '../../../assets/project/image3.jpg'
-import { useRef } from "react"
+
+import { useEffect, useRef, useState } from "react"
 import ContainerContent from "../../layouts/containerContent/ContainerContent"
+import { ProjectType } from "../../../api/modules/project/project.types"
+import { ProjectService } from "../../../api/services/project.service"
 
 export default function Project(){
-
+    const [projects, setProjects] = useState<ProjectType[]>([])
 
     const trackRef = useRef<HTMLDivElement>(null)
 
-    const images = [img, img1, img2, img3]
+    useEffect(() => {
+        ProjectService.get().then(setProjects)
+    },[])
+
 
     const handlePrev = () => {
         if(!trackRef.current)return
@@ -37,15 +39,17 @@ export default function Project(){
                     </h1>
                     <div className={s.carousel}>
                         <div className={s.track} ref={trackRef}>
-                            {images.map((src, i) => (
+                            {projects.map((project, i) => (
                                 <div className={s.slide} key={i}>
                                     <div className={s.imageWrapper}>
-                                        <img src={src} alt="image" />
+                                        <img src={project.image_0?.url} alt="image" />
                                         <div className={s.overlay}></div>
                                     </div>
+                                    <div className={s.textWrapper}>
+                                        <h2 className={s.titleCard}>{project.title}</h2>
+                                        <h1 className={s.subTitleCard}>{project.short_text}</h1>
+                                    </div>
                                     
-                                    <h2 className={s.titleCard}>John Doe</h2>
-                                    <h1 className={s.subTitleCard}>subTest</h1>
                                 </div>
                             ))}
                         </div>
