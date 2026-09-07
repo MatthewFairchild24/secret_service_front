@@ -4,6 +4,7 @@ export interface ImageType{
 }
 
 export interface ServiceType{
+    id: number
     title: string
     preview_text:string
     description: string

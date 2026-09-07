@@ -9,5 +9,9 @@ export const projectApi = {
 
     getAll(){
         return api.get<ProjectType[]>('/project').then(r => r.data)
+    },
+
+    getById(id: number){
+        return api.get<ProjectType>(`/project/${id}`).then(r=>r.data)
     }
 }

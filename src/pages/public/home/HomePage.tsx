@@ -35,7 +35,7 @@ export default function HomePage(){
                 </section>
 
                 <section className={`section section--tight {s.sectionCompact}`}>
-                    <Services></Services>
+                    <Services />
                 </section>
             </main>
             <Footer />

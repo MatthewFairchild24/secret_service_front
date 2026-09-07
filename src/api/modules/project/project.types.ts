@@ -9,6 +9,7 @@ export interface VideoType{
 }
 
 export interface ProjectType{
+    id: number
     title: string
     description_0?: string 
     description_1?: string
@@ -16,5 +17,5 @@ export interface ProjectType{
     short_text: string
     image_0: ImageType 
     image_1?: ImageType | null
-    video_id?: VideoType | null
+    video?: VideoType | null
 }

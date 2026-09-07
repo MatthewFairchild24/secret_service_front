@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react"
 import ContainerContent from "../../layouts/containerContent/ContainerContent"
 import { ProjectType } from "../../../api/modules/project/project.types"
 import { ProjectService } from "../../../api/services/project.service"
+import { Link } from "react-router-dom"
 
 export default function Project(){
     const [projects, setProjects] = useState<ProjectType[]>([])
@@ -15,7 +16,6 @@ export default function Project(){
     useEffect(() => {
         ProjectService.get().then(setProjects)
     },[])
-
 
     const handlePrev = () => {
         if(!trackRef.current)return
@@ -40,11 +40,15 @@ export default function Project(){
                     <div className={s.carousel}>
                         <div className={s.track} ref={trackRef}>
                             {projects.map((project, i) => (
+                                
                                 <div className={s.slide} key={i}>
-                                    <div className={s.imageWrapper}>
-                                        <img src={project.image_0?.url} alt="image" />
-                                        <div className={s.overlay}></div>
-                                    </div>
+                                    <Link to={`/project/${project.id}`}>
+                                        <div className={s.imageWrapper}>
+                                            <img src={project.image_0?.url} alt="image" />
+                                            <div className={s.overlay}></div>
+                                        </div>
+                                    </Link>
+                                    
                                     <div className={s.textWrapper}>
                                         <h2 className={s.titleCard}>{project.title}</h2>
                                         <h1 className={s.subTitleCard}>{project.short_text}</h1>
@@ -52,6 +56,7 @@ export default function Project(){
                                     
                                 </div>
                             ))}
+
                         </div>
 
                         <button className={s.prev} onClick={handlePrev}>&#10094;</button>

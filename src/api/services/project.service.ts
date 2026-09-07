@@ -10,5 +10,8 @@ export const ProjectService = {
     },
     get(){
         return projectApi.getAll()
+    },
+    getById(id: number){
+        return projectApi.getById(id)
     }
 }

@@ -1,0 +1,51 @@
+@import '../../../styles/_variables.scss';
+
+.content{
+    padding-top: 11%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+.title{
+
+    padding-bottom: 48px;
+    font-weight: 700;
+    align-self: flex-start;
+
+    .titleWhite{
+        color:$color-text;
+    }
+
+    .titleAccent{
+        color:$accent
+    }
+}
+
+
+
+.image_0, .image_1{
+    width: 100%;
+    max-width: 760px;
+    // display: block;
+}
+
+.image_0{
+    margin-left: 0;
+}
+.image_1{
+    margin-right:0;
+}
+.video{
+    width: 100%;
+    max-width: 920px;
+}
+
+.description{
+    white-space: pre-line;
+    text-indent: 72px;
+    line-height: 1.8;
+    padding: 5% 0;
+    margin: 0;
+}
