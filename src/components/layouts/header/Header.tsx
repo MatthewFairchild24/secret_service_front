@@ -14,8 +14,8 @@ export default function Header(){
 
 
     const navItems = [
-        {label:'Услуги', to:'/'},
-        {label:'Проекты', to:'/'},
+        {label:'Услуги', to:'/services'},
+        {label:'Проекты', to:'/projects'},
         {label:'Контакты', to:'/'},
     ]
 

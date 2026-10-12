@@ -1,0 +1,92 @@
+@import '../../../styles/variables';
+
+.content{
+    padding-top: 11%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+.title{
+    font-size: clamp(28px, 4vw, 42px );
+    padding-bottom: 48px;
+    font-weight: 700;
+    align-self: flex-start;
+
+    .titleWhite{
+        color:$color-text;
+    }
+
+    .titleAccent{
+        color:$accent
+    }
+}
+
+.projectCategoryContent{
+
+
+    .category{
+        display: flex;
+    }
+
+    .categoryItem{
+        padding: 13px 15px;
+        appearance: none;
+        -webkit-appearance: none;
+        font: inherit;
+        line-height: 1;
+        cursor: pointer;
+        outline: none;
+
+        background: $color-bg;
+        color: $color-text;
+
+        border: 2px solid $color-text;
+        box-shadow: $shadow-sm;
+
+        font-weight: 650;
+        transition: $transition-normal;
+
+        text-decoration: none;
+
+        &:hover {
+            background: $gray-400;
+            border-color: $contrast;
+            color: $contrast;
+
+            box-shadow: $shadow-md;
+            transform: translateY(-1px);
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: $shadow-sm;
+        }
+
+        &:focus-visible {
+            outline: 2px solid rgba($color-text, 0.18);
+            outline-offset: 2px;
+        }
+    }
+
+    .active{
+        background: $gray-400;
+        border-color: $contrast;
+        color: $contrast;
+
+        box-shadow: $shadow-md;
+    }
+}
+
+.projectContent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding: 3% 0;
+}   

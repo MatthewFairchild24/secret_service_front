@@ -1,12 +1,13 @@
-import Container from "../../layouts/container/Container"
-
 import s from './Project.module.scss'
-
-import { useEffect, useRef, useState } from "react"
+import Container from "../../layouts/container/Container"
 import ContainerContent from "../../layouts/containerContent/ContainerContent"
 import { ProjectType } from "../../../api/modules/project/project.types"
 import { ProjectService } from "../../../api/services/project.service"
+
+import img from '../../../assets/project/default_img.jpg'
 import { Link } from "react-router-dom"
+import { useEffect, useRef, useState } from "react"
+
 
 export default function Project(){
     const [projects, setProjects] = useState<ProjectType[]>([])
@@ -44,7 +45,12 @@ export default function Project(){
                                 <div className={s.slide} key={i}>
                                     <Link to={`/project/${project.id}`}>
                                         <div className={s.imageWrapper}>
-                                            <img src={project.image_0?.url} alt="image" />
+                                            {project.image_0?.url ? (
+                                                <img src={project.image_0.url} alt="image_is_have" />
+                                            ) : (
+                                                <img src={img} alt="default_image" />
+                                            )}
+                                            {/* <img src={project.image_0?.url} alt="image" /> */}
                                             <div className={s.overlay}></div>
                                         </div>
                                     </Link>

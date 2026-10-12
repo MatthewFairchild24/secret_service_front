@@ -8,6 +8,11 @@ export interface VideoType{
     url: string
 }
 
+export interface Category{
+    id:number
+    name: string
+}
+
 export interface ProjectType{
     id: number
     title: string
@@ -18,4 +23,5 @@ export interface ProjectType{
     image_0: ImageType 
     image_1?: ImageType | null
     video?: VideoType | null
+    category?: Category | null
 }

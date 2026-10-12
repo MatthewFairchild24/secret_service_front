@@ -1,0 +1,50 @@
+@import '../../../styles/variables';
+
+.content{
+    padding-top: 11%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    // &::before{
+    //     content: "";
+
+    //     position:absolute;
+    //     border: 2px solid $color-border;
+    //     border-radius: $radius-sm;
+
+    //     top: 12%;
+    //     left: -7%;
+    //     right: -7%;
+    //     bottom: -12%;
+
+    //     pointer-events: none;
+    // }
+
+    // & p{
+    //     align-items: flex-start;
+    // }
+}
+
+.title{
+    font-size: clamp(28px, 4vw, 42px );
+    padding-bottom: 48px;
+    font-weight: 700;
+    align-self: flex-start;
+
+    .titleWhite{
+        color:$color-text;
+    }
+
+    .titleAccent{
+        color:$accent
+    }
+}
+
+.containerService{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+}

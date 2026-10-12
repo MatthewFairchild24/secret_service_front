@@ -1,31 +1,25 @@
 import { useEffect, useState } from 'react'
 
-import img from '../../../assets/project/image.jpg'
-import img1 from '../../../assets/project/image1.jpg'
-import video from '../../../assets/project/Doom.mp4'
-
 import { ProjectType } from '../../../api/modules/project/project.types'
 import s from './ProjectPage.module.scss'
 import Header from '../../../components/layouts/header/Header'
 import Footer from '../../../components/layouts/footer/Footer'
 import Container from '../../../components/layouts/container/Container'
 import ContainerContent from '../../../components/layouts/containerContent/ContainerContent'
-import { PROJECT_DESCRIPITON_2, PROJECT_DESCRIPTION_0, PROJECT_DESCRIPTION_1 } from '../../../app/content/ProjectPage'
 import { ProjectService } from '../../../api/services/project.service'
 import { useParams } from 'react-router-dom'
+import Project from '../../../components/sections/projects/Project'
 
 
 export default function ProjectPage() {
-    const [project, setProject] = useState<ProjectType>() //задел под интеграцию с апи, сначала просто макет соберу
+    const [project, setProject] = useState<ProjectType>() 
     const idProject = useParams()
 
     useEffect(() => {
         ProjectService.getById(Number(idProject.id)).then(setProject)
     },[idProject])
 
-    console.log(idProject)
-    console.log(project)
-    console.log(idProject.id)
+
 
     return(<>
         <div className={s.page}>
@@ -39,7 +33,7 @@ export default function ProjectPage() {
                                 <span className={s.titleAccent}>проекта</span> */}
                                 {project?.title}
                             </h1>
-                            {project?.image_0?.url && (
+                            {project?.image_0?.url && ( 
                                 <img className={s.image_0} src={project?.image_0?.url} alt='image_0'></img>
                             )}
                             {project?.description_0 && (
@@ -50,15 +44,18 @@ export default function ProjectPage() {
                                 <img className={s.image_1} src={project?.image_1?.url} alt='image_1'></img>
                             )}
                             {/* <img className={s.image_1} src={project?.image_1?.url} alt="image_1" /> */}
-                            {project?.description_0 && (
+                            {project?.description_1 && (
                                 <p className={s.description}>{project?.description_1}</p>
                             )}
                             {project?.video?.url && (
                                 <video className={s.video} src={project.video.url} controls muted></video>
                             )}
-                            {project?.description_0 && (
+                            {project?.description_2 && (
                                 <p className={s.description}>{project?.description_2}</p>
                             )}
+
+
+                            <Project />
 
                         </div>
                     </ContainerContent>
