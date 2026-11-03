@@ -11,9 +11,9 @@ export default function Footer(){
     const [open, setOpen] = useState(false)
 
     const navItems = [
-        {label: "Услуги", to:"/"},
-        {label: "Проекты", to:"/"},
-        {label: "Контакты", to:"/"},
+        {label: "Услуги", to:"/services"},
+        {label: "Проекты", to:"/projects"},
+        {label: "Контакты", to:"/contacts"},
 
     ]
 

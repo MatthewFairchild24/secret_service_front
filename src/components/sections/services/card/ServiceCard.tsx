@@ -12,4 +12,4 @@ export default function ServiceCard({service}:{service:ServiceType}){
         </div>
         
     </>)
-}
+}   

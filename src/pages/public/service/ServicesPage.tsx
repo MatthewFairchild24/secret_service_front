@@ -7,6 +7,7 @@ import s from './ServicesPage.module.scss'
 import { ServiceType } from '../../../api/modules/service/service.types'
 import { serviceService } from '../../../api/services/service.service'
 import ServiceCard from '../../../components/sections/services/card/ServiceCard'
+import Footer from '../../../components/layouts/footer/Footer'
 
 export default function ServicesPage(){
     const [services, setServices] = useState<ServiceType[]>([])
@@ -40,6 +41,7 @@ export default function ServicesPage(){
                     </ContainerContent>
                 </Container>
             </section>
+            <Footer/>
         </div>
     </>)
 }

@@ -16,7 +16,7 @@ export default function Header(){
     const navItems = [
         {label:'Услуги', to:'/services'},
         {label:'Проекты', to:'/projects'},
-        {label:'Контакты', to:'/'},
+        {label:'Контакты', to:'/contacts'},
     ]
 
     const scrollTopInstance = () => {

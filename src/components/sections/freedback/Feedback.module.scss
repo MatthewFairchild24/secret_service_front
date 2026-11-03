@@ -1,0 +1,125 @@
+@import '../../../styles/variables';
+
+$fs-phone: clamp(16px, 0.25vw + 14px, 18px);
+
+
+.containerFeedback{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 3% 0;
+
+    width: 100%;
+    
+
+}
+
+.somethingInfo{
+
+
+    .infoTitle{
+        color: $color-text;
+        font-size: $h2-size;
+    
+    }
+
+    .infoText{
+        padding-bottom: 20%;
+    }
+}
+
+.contInfo{
+    color: $color-text-thirty;
+    .contRowContent{
+        padding: 1.5% 0;
+
+
+        .contText{
+
+        }
+    }
+    .contRowSocial{
+        
+        .socialItem{
+            padding: 3px;
+        }
+    }
+}
+
+
+.contContent{ 
+    display: flex;
+    flex-direction: column;
+    width: clamp(70%, 15vw, 100%);
+    align-items: center;
+
+    border: 2px solid $color-border; 
+    background-color: $black;
+    border-radius: $radius-md;
+
+    .input{
+        width: 80%;
+        height: auto;
+        padding-bottom: 4.5%;
+        margin-top: 5% ;
+        background-color: $color-surface;
+        border: 2px solid $color-border;
+        border-radius: $radius-sm;
+
+
+    }
+
+    .btnInput{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 3% 0;
+        padding: 13px 22px;
+        border-radius: 999px;
+
+        font-size: $fs-phone;
+        white-space: nowrap;
+
+        appearance: none;
+        -webkit-appearance: none;
+        font: inherit;
+        line-height: 1;
+        cursor: pointer;
+        outline: none;
+
+        background: $color-bg;
+        color: $color-text;
+
+        border: 2px solid $color-text;
+        box-shadow: $shadow-sm;
+
+        font-weight: 650;
+        transition: $transition-normal;
+
+        text-decoration: none;
+
+        &:hover {
+            background: $gray-400;
+            border-color: $contrast;
+            color: $contrast;
+
+            box-shadow: $shadow-md;
+            transform: translateY(-1px);
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: $shadow-sm;
+        }
+
+        &:focus-visible {
+            outline: 2px solid rgba($color-text, 0.18);
+            outline-offset: 2px;
+        }
+    }
+}
