@@ -9,5 +9,9 @@ export const serviceService = {
     },
     get(){
         return serviceApi.getAll()
+    },
+    getById(id:number){
+        return serviceApi.getById(id)
     }
+
 }

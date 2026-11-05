@@ -10,6 +10,9 @@ export const serviceApi = {
     },
     getAll(){
         return api.get<ServiceType[]>("/service").then(r => r.data)
+    },
+    getById(id:number){
+        return api.get<ServiceType>(`/service/${id}`).then(r => r.data)
     }
 
 }
